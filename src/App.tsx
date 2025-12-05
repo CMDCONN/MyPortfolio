@@ -11,6 +11,15 @@ interface Project {
   image?: string
 }
 
+interface WorkExperience {
+  id: number
+  company: string
+  role: string
+  duration: string
+  description: string
+  technologies: string[]
+}
+
 const projects: Project[] = [
   {
     id: 1,
@@ -39,6 +48,25 @@ const projects: Project[] = [
     description: 'Hackathon project developed for Bet365 competition.',
     technologies: ['Python'],
     githubUrl: 'https://github.com/Staffs-Code-Cafe/Bet365-Hackathon-TeamCC'
+  }
+]
+
+const workExperiences: WorkExperience[] = [
+  {
+    id: 1,
+    company: 'BoysenB',
+    role: 'Software Developer',
+    duration: '2024',
+    description: 'Worked at a mobile software development and web development company in Birmingham. Developed a comprehensive solution to calculate carbon emissions for a client, built using Python and Django. Later refactored the application into React to improve performance and user experience. Collaborated with the development team to deliver high-quality software solutions for clients.',
+    technologies: ['Python', 'Django', 'React', 'Web Development']
+  },
+  {
+    id: 2,
+    company: 'NHS',
+    role: 'Software Developer',
+    duration: '2024',
+    description: 'Developed RepMe, a comprehensive feedback system designed for the NHS to facilitate communication and feedback between healthcare professionals. The application enables doctors and nurses to provide structured feedback, improving workplace communication and professional development. Worked closely with healthcare staff to understand their needs and requirements, ensuring the solution addressed real-world challenges in the healthcare environment.',
+    technologies: ['C#', '.NET', 'Healthcare Systems']
   }
 ]
 
@@ -87,12 +115,14 @@ function ProjectCard({ project }: { project: Project }) {
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
       setActiveSection(sectionId)
+      setMobileMenuOpen(false)
     }
   }
 
@@ -103,7 +133,16 @@ function App() {
           <div className="logo" onClick={() => scrollToSection('home')}>
             Portfolio
           </div>
-          <ul className="nav-links">
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <li>
               <a 
                 href="#home" 
@@ -120,6 +159,15 @@ function App() {
                 className={activeSection === 'projects' ? 'active' : ''}
               >
                 Projects
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#experience" 
+                onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}
+                className={activeSection === 'experience' ? 'active' : ''}
+              >
+                Experience
               </a>
             </li>
             <li>
@@ -155,8 +203,8 @@ function App() {
               Software Developer | Python C# C++ HTML JavaScript
             </p>
             <p className="hero-description">
-              I build beautiful, functional web applications and digital experiences
-              that make a difference.
+              I'm a Software Developer who builds functional applications and digital experiences
+              that make a difference. I'm currently studying at the University of Staffordshire, where I'm studying Computer Science.
             </p>
             <div className="hero-buttons">
               <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
@@ -189,6 +237,34 @@ function App() {
           <div className="projects-grid">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="experience-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">Work Experience</h2>
+            <p className="section-subtitle">
+              Professional experience and contributions to real-world projects.
+            </p>
+          </div>
+          <div className="experience-list">
+            {workExperiences.map((experience) => (
+              <div key={experience.id} className="experience-card">
+                <div className="experience-header">
+                  <div className="experience-company">{experience.company}</div>
+                  <div className="experience-role">{experience.role}</div>
+                  <div className="experience-duration">{experience.duration}</div>
+                </div>
+                <p className="experience-description">{experience.description}</p>
+                <div className="experience-technologies">
+                  {experience.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
