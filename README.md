@@ -96,6 +96,5 @@ This project is private and personal.
 
 ## Contact
 
-- Website: [worrallwebdev.com](https://worrallwebdev.com/)
 - GitHub: [@CMDCONN](https://github.com/CMDCONN)
 - LinkedIn: [Connor Worrall](https://uk.linkedin.com/in/connor-worrall-b5b7b02a0)
