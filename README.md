@@ -59,37 +59,6 @@ The built files will be in the `dist` directory. You can preview the production 
 npm run preview
 ```
 
-## Project Structure
-
-```
-portfolio/
-├── public/          # Static assets
-├── src/
-│   ├── assets/     # Images and other assets
-│   ├── App.tsx     # Main application component
-│   ├── App.css     # Application styles
-│   ├── index.css   # Global styles
-│   └── main.tsx    # Application entry point
-├── index.html      # HTML template
-└── package.json    # Dependencies and scripts
-```
-
-## Customization
-
-To customize this portfolio for your own use:
-
-1. Update personal information in `src/App.tsx`:
-   - Name and title
-   - About section text
-   - Skills list
-   - Contact links
-
-2. Modify the projects array in `src/App.tsx` to showcase your own projects
-
-3. Adjust colors and styling in `src/App.css` to match your brand
-
-4. Update the page title in `index.html`
-
 ## License
 
 This project is private and personal.
