@@ -502,6 +502,112 @@
   gap: 0.5rem;
 }
 
+/* Uni Life Section */
+.unilife-section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+.unilife-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.unilife-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.unilife-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.unilife-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}
+
+.unilife-card:hover::before {
+  transform: scaleX(1);
+}
+
+.unilife-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.unilife-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.unilife-role {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.unilife-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.unilife-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(102, 126, 234, 0.25);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.highlight-item svg {
+  color: rgba(102, 126, 234, 1);
+  flex-shrink: 0;
+}
+
 /* About Section */
 .about-section {
   padding: 6rem 2rem;
@@ -805,6 +911,32 @@
     font-size: 1rem;
   }
 
+  /* Uni Life Section */
+  .unilife-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .unilife-card {
+    padding: 1.5rem;
+  }
+
+  .unilife-title {
+    font-size: 1.5rem;
+  }
+
+  .unilife-role {
+    font-size: 1.1rem;
+  }
+
+  .unilife-description {
+    font-size: 1rem;
+  }
+
+  .unilife-highlights {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .section-header {
     margin-bottom: 3rem;
   }
@@ -952,6 +1084,7 @@
 
   .projects-section,
   .experience-section,
+  .unilife-section,
   .about-section,
   .contact-section {
     padding: 3rem 1rem;

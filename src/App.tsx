@@ -172,6 +172,15 @@ function App() {
             </li>
             <li>
               <a 
+                href="#unilife" 
+                onClick={(e) => { e.preventDefault(); scrollToSection('unilife'); }}
+                className={activeSection === 'unilife' ? 'active' : ''}
+              >
+                Uni Life
+              </a>
+            </li>
+            <li>
+              <a 
                 href="#about" 
                 onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
                 className={activeSection === 'about' ? 'active' : ''}
@@ -270,6 +279,56 @@ function App() {
         </div>
       </section>
 
+      <section id="unilife" className="unilife-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">Uni Life</h2>
+            <p className="section-subtitle">
+              My involvement in university community and activities.
+            </p>
+          </div>
+          <div className="unilife-content">
+            <div className="unilife-card">
+              <div className="unilife-header">
+                <h3 className="unilife-title">Code Cafe</h3>
+                <div className="unilife-role">Co-Director</div>
+              </div>
+              <p className="unilife-description">
+                I am the co-director of Code Cafe, a community-centered group at Staffordshire University 
+                that brings students together to code, collaborate, and learn. Code Cafe provides a welcoming 
+                environment for students of all skill levels to work on projects, share knowledge, and build 
+                connections within the developer community. As co-director, I help organize events, facilitate 
+                coding sessions, and foster a supportive learning atmosphere where everyone can grow their 
+                programming skills together.
+              </p>
+              <div className="unilife-highlights">
+                <div className="highlight-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  <span>Community Building</span>
+                </div>
+                <div className="highlight-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  <span>Event Organization</span>
+                </div>
+                <div className="highlight-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  <span>Knowledge Sharing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="about-section">
         <div className="section-container">
           <div className="about-content">
@@ -277,7 +336,7 @@ function App() {
               <h2 className="section-title">About Me</h2>
               <p>
                 I'm a passionate developer with a love for creating elegant solutions
-                to complex problems. With expertise in modern web technologies, I bring
+                to complex problems. With expertise in modern software technologies, I bring
                 ideas to life through clean code and thoughtful design.
               </p>
               <p>
