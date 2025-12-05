@@ -14,20 +14,27 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: 'GitHub Repo Maker',
+    description: 'A Python application with a GUI built using Flet that creates GitHub repositories using subprocess and curl commands.',
+    technologies: ['Python', 'Flet'],
+    githubUrl: 'https://github.com/CMDCONN/GithubRepoMaker'
+  },
+  {
+    id: 2,
     title: 'RepMe',
     description: 'A Project designed for the NHS to give feedback to doctors and nurses alike.',
     technologies: ['C#'],
     githubUrl: 'https://github.com/CMDCONN/RepMe'
   },
   {
-    id: 2,
+    id: 3,
     title: 'Code Cafe Coffee Machine',
     description: 'University of Staffordshire Code Cafe Discord bot for managing the discord server.',
     technologies: ['Python'],
     githubUrl: 'https://github.com/Staffs-Code-Cafe/Code-Cafe-Coffee-Machine'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Bet365 Hackathon - TeamCC',
     description: 'Hackathon project developed for Bet365 competition.',
     technologies: ['Python'],
